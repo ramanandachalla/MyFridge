@@ -1,0 +1,18 @@
+extends ../layout
+
+block content
+	h1.
+		#{title}
+	form#formAddFood(name="addfood",method="post",action="/foods")
+		p Name: 
+			input#inputName(type="text", placeholder="enter name", name="name")
+		p Date:
+			input#inputDate(type="date", name="date")
+		p Expiry: 
+			input#inputExpiry(type="date", name="expiry")
+		p Left Overs?: 
+			input#inputLeft_overs(type="checkbox", name="left_overs")
+			p Quantity:
+			input#inputQuantity(type="number", placeholder="1234", name="quantity")
+		p
+			button#btnSubmit(type="submit") submit

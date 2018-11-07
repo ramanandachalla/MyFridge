@@ -1,0 +1,21 @@
+extends ../layout
+
+block content
+	h1.
+		Food ID #{food._id}
+	form(action='/foods/#{food._id}/edit',method='post',name='updatefood',enctype='application/x-www-form-urlencoded')
+		p Name:
+			input#inputName(type='text', value='#{food.name}', name='name')
+		p Date:
+			input#inputDate(type='date', value='#{fooddate}', name='date')
+		p Expiry:
+			input#inputExpiry(type='date', value='#{foodexpiry}', name='expiry')
+		p Left Overs?:
+			input#inputLeft_overs(type='checkbox', name='left_overs', checked=('#{food.left_overs}'==='true' ? "checked" : undefined))
+		p Quantity:
+			input#inputQuantity(type='number', value='#{food.quantity}', name='quantity')
+		p
+			input(type='hidden',value='PUT',name='_method')
+		p
+			button#btnSubmit(type='submit').
+				Update
